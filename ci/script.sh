@@ -6,7 +6,11 @@ if [ -n "${TARGET:-}" ]; then
     cargo check --target $TARGET
 
     if [[ $TARGET == riscv* ]]; then
-        cargo check --target $TARGET --examples
+        if [ -n "${RUSTC_LINKER:-}" ]; then
+            PATH="$PATH:$PWD/gcc/bin"
+        fi
+
+        cargo build --target $TARGET --examples
     fi
 
     if [ $TRAVIS_RUST_VERSION = nightly ]; then

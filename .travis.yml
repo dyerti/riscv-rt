@@ -10,6 +10,7 @@ env:
 - TARGET=riscv32i-unknown-none-elf
 - TARGET=riscv32imac-unknown-none-elf
 - TARGET=riscv64imac-unknown-none-elf
+- TARGET=riscv64imac-unknown-none-elf RUSTC_LINKER=riscv64-unknown-elf-ld
 
 if: (branch = staging OR branch = trying OR branch = master) OR (type = pull_request AND branch = master)
 
