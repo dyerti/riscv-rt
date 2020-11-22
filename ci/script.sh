@@ -10,7 +10,7 @@ if [ -n "${TARGET:-}" ]; then
             PATH="$PATH:$PWD/gcc/bin"
             TARGET_UNDERSCORES=${TARGET//-/_}
             TARGET_UPPERCASE=${TARGET_UNDERSCORES^^}
-            CARGO_TARGET_${TARGET_UPPERCASE}_LINKER=${RUSTC_LINKER}
+            export CARGO_TARGET_${TARGET_UPPERCASE}_LINKER=${RUSTC_LINKER}
         fi
 
         cargo build --target $TARGET --examples
