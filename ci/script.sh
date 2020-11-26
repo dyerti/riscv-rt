@@ -27,5 +27,10 @@ if [ -n "${CHECK_BLOBS:-}" ]; then
 fi
 
 if [ -n "${RUSTFMT:-}" ]; then
+    echo $PATH
+    which cargo
+    which rustup
+    whick rustc
+    export PATH="$PATH:$HOME/.cargo/bin"
     cargo fmt -- --check
 fi
