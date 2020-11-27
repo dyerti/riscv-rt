@@ -30,7 +30,9 @@ if [ -n "${RUSTFMT:-}" ]; then
     echo $PATH
     which cargo
     which rustup
-    whick rustc
+    which rustc
+    ls -l $HOME/.cargo/bin
+    ls -l /home/travis/.cargo/bin
     export PATH="$PATH:$HOME/.cargo/bin"
     cargo fmt -- --check
 fi
